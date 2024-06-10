@@ -1,0 +1,235 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden; /* Ocultar barra de desplazamiento horizontal */
+  background-image: url("../Img/fondo.jpg");
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el cuerpo */
+  background-position: top center; /* Mover la imagen un poco más arriba y centrarla */
+  background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box; /* Hacer que el ancho y el alto incluyan el relleno y el borde */
+}
+.header {
+    width: 100%;
+    padding: 1rem 2rem; /* Padding añadido para dar espacio en los bordes */
+    display: flex;
+    justify-content: flex-start; /* Alineación a la izquierda */
+    position: relative; /* Para estar encima del overlay */
+    z-index: 2; /* Para asegurar que esté encima del overlay */
+  }
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo del home-link para darle un aspecto moderno */
+.home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Fondo blanco con más opacidad */
+  border-radius: 50%; /* Hacer el fondo circular */
+  padding: 0.8rem;
+  position: relative;
+  z-index: 2; /* Para estar encima del fondo del header */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Animación de hover para el home-link */
+.home-link:hover {
+  background-color: rgba(255, 255, 255, 1); /* Más opaco al hacer hover */
+  transform: scale(1.1); /* Aumentar tamaño al hacer hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumentar la sombra al hacer hover */
+}
+
+/* Estilo del icono para darle un aspecto más llamativo */
+.home-icon {
+  width: 2rem;
+  height: 2rem;
+  transition: transform 0.3s ease; /* Transición suave para la animación del icono */
+}
+.container {
+  display: flex;
+  min-height: 100vh;
+  padding-bottom: 10px; /* Ajusta esto según la altura de tu pie de página */
+  position: relative; /* Para estar encima del overlay */
+  z-index: 2;
+}
+.left {
+  width: 60%;
+  display: flex;
+  flex-direction: column; /* Cambio a column */
+  align-items: center;
+  justify-content: center;
+}
+.left img{
+  width: 450px;
+}
+/* Mostrar la imagen de escritorio por defecto */
+.desktop-image {
+  display: block;
+}
+
+/* Ocultar la imagen móvil por defecto */
+.mobile-image {
+  display: none;
+}
+
+
+.left span {
+  font-size: 3em;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 10px 0;
+  color: #f77308;
+}
+.right {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+.container .box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  border-radius: 15px;
+  cursor: pointer;
+  opacity: 0; /* Ocultar inicialmente */
+  transform: translateY(30px); /* Posicionar ligeramente abajo inicialmente */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Transiciones más suaves */
+  border-bottom: 2px solid #fff;
+}
+.container .box.show {
+  opacity: 1; /* Mostrar */
+  transform: translateY(0); /* Mover a posición original */
+}
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+.box:hover img {
+  opacity: 0.8;
+}
+.box:hover {
+  transform: translateY(-10px);
+}
+.box:hover .info {
+  opacity: 1;
+  height: 40%;
+}
+.info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s, height 0.8s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  color: #aa642b;
+  text-align: center;
+  padding: 10px 0;
+  position: relative; /* Para estar encima del overlay */
+  z-index: 2;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Capa negra semitransparente */
+    z-index: 1; /* Debajo del header pero encima de la imagen de fondo */
+  }
+
+@media (max-width: 680px) {
+  body {
+    background-image: url("../Img/fondo.jpg");
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el cuerpo */
+    background-position: top center; /* Mover la imagen un poco más arriba y centrarla */
+    background-attachment: scroll;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .left img{
+    width: 320px;
+  }
+  .desktop-image {
+    display: none;
+  }
+  
+  .mobile-image {
+    display: block;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  .left span {
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 5px 0;
+    color: #fff;
+  }
+  .right {
+    padding: 10px;
+  }
+  .box {
+    width: calc(
+      50% - 30px
+    ); /* Calcular el ancho para dos cajas por fila con margen */
+    height: 100px; /* Ajustar la altura para que se vean mejor en dispositivos móviles */
+    margin: 15px;
+  }
+  .info {
+    font-size: 14px; /* Reducir el tamaño de fuente de la información */
+  }
+  footer {
+    font-size: 13px;
+    text-align: center;
+  }
+}

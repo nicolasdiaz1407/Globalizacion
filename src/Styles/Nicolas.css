@@ -1,0 +1,67 @@
+.modal-content {
+  background-color: #2a2a2a; /* Cambiar el color de fondo del contenido a oscuro */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.nicolas-image {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 10px; /* Cambiar el valor a 10px para que coincida con el borde del contenido */
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Agregar una sombra sutil */
+}
+
+.modal-body {
+  text-align: justify;
+}
+
+.modal-body h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff; /* Cambiar el color del título a blanco */
+}
+
+.modal-body p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ccc; /* Cambiar el color del texto a un tono más claro */
+}
+
+.modal-body ul {
+  margin-bottom: 10px;
+  padding-left: 20px; /* Ajustar el relleno izquierdo para la lista */
+}
+
+.modal-body ul li {
+  margin-bottom: 5px; /* Reducir el espacio entre elementos de la lista */
+  color: #999; /* Cambiar el color del texto de la lista */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.close-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff; /* Cambiar el color de la X a blanco */
+}
